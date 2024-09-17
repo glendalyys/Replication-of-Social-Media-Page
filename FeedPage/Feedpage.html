@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slugfest</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="FeedPage.css" />
+    <style>
+      :root {
+        --bs-primary: #2872fa;
+        --bs-primary-rgb: 40, 114, 250;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sticky-top">
+      <nav class="navbar sticky-top navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <!-- the company name or logo/link to home -->
+          <a class="navbar-brand text-light fw-medium" href="#">SlugFest</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- collapsable bar -->
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- Home Button -->
+              <li class="nav-item">
+                <a
+                  href="../FeedPage/FeedPage.html"
+                  class="btn btn-primary nav-link text-light "
+                  >Home</a
+                >
+              </li>
+
+              <!-- Compose Button -->
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="btn btn-primary nav-link text-light opacity-75"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                  >Compose</a
+                >
+              </li>
+
+              <!-- Profile Button -->
+              <li class="nav-item">
+                <a
+                  href="../ProfilePages/KevinsProfile.html"
+                  class="btn btn-primary nav-link text-light opacity-75"
+                  >Profile</a
+                >
+              </li>
+
+              <!-- Notifications Button -->
+              <li class="nav-item">
+                <a
+                  href="../NotificationsPage/Notifications.html"
+                  class="btn btn-primary nav-link text-light opacity-75"
+                  >Notifications</a
+                >
+              </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                  <!-- search icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-search"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+              </div>
+              <button
+                class="btn btn-outline-success text-dark border border-0"
+                style="background-color: #54baed"
+                type="submit"
+                title="submit button"
+              >
+                <!-- submit button icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-chevron-bar-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.146 3.646a.5.5 0 0 0 0 .708L7.793 8l-3.647 3.646a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708 0zM11.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z"
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Modal -->
+    <!--Team Note: please add to indivial profile pages & nav bar -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Compose</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- text area -->
+          <div class="modal-body">
+            <div class="input-group">
+              <textarea
+                class="form-control"
+                placeholder="Compose Slime"
+                aria-label="With textarea"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">
+              Slime
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <h1 class="h1 mb-3 fw-semibold text-center col-align-middle pt-4">
+      Welcome to SlugFest
+    </h1>
+    <!-- SLIMES -->
+    <div class="main-body ">
+      <!-- PAGE TITLE -->
+      
+      <!-- This compose box> -->
+      <div class="col-6 pb-2">
+        <div class="container-fluid">
+          <div class="row" style="height: 100%">
+            <span class="col-2">
+              <img
+                class="img-thumbnail thumbnail-padding: 0.25 rem;"
+                src="../image_assets/kevin.jpeg"
+                style="height: 80%; width: 80%"
+                alt="Profile image"
+              />
+            </span>
+
+            <!--compose slime -->
+            <span class="col-10">
+              <!-- <input
+                type="text"
+                class="form-control"
+                style="height: 100%"
+                id="exampleFormControlInput1"
+                placeholder="Compose Slime"
+              /> -->
+              <textarea
+                class="form-control"
+                placeholder="Compose Slime"
+                aria-label="With textarea"
+                style="height: 100%"
+              ></textarea>
+            </span>
+          </div>
+
+          <div class="">
+            <span class="col-md-12 d-flex justify-content-end pt-2">
+              <button type="button" class="btn btn-primary">
+                Slime
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="col-md-6" />
+
+
+
+      
+      <!-- First Card -->
+      <div class="border rounded col-md-6 p-1 mb-4">
+        
+        <!-- image -->
+        <div class="row container-fluid pt-3">
+          <span class="col-2">
+            <img
+              class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+              src="../image_assets/choong-soo.png"
+              alt="Profile image"
+            />
+          </span>
+
+          <!-- reslime text -->
+          <div class="pr-5 col-10">
+            <!-- title, @, date -->
+            <div>
+              <h6
+                class="card-title"
+                style="padding-bottom: 5px"
+              >
+              <a href="../ProfilePages/Choong-SooProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Choong-Soo Lee</a><span class="card-subtitle text-muted">
+                  @ChoongSooL · 1h</span>
+              </h6>
+
+              <!-- slime text -->
+              On campus (September 6, 2021 at 09:41AM)
+            </div>
+          </div>
+        </div>
+
+        <!-- buttons -->
+        <div class="row container-fluid">
+          <span class="col-md-10 offset-md-2">
+            <span
+              class="d-flex justify-content-between align-items-center"
+            >
+              <!-- comment button -->
+              <button type="button" class="btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-chat-right me-3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                  />
+                </svg>
+                <span>0</span>
+              </button>
+
+              <!-- reslime button -->
+              <button type="button" class="btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-recycle me-3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                  />
+                </svg>
+                <span>0</span>
+              </button>
+
+              <!-- heart button -->
+              <button type="button" class="btn">
+                <!-- me-3 adds the space next to the icon-->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-heart me-3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  />
+                </svg>
+                  
+                <!-- <i class="material-icons" style="color:red"></i> -->
+                <span>0</span>
+              </button>
+
+              <!-- share button -->
+              <button type="button" class="btn position-relative">
+                <svg
+                  style=""
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-upload"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                  />
+                  <path
+                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </span>
+        </div>
+        <!-- share button -->
+        </div>
+
+      <!-- Second Card -->
+      <div class="border rounded col-md-6 p-1 mb-4">
+        <!-- top line -->
+
+          <!-- image -->
+          <div class="row container-fluid pt-3">
+            <span class="col-2">
+              <img
+                class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+                src="../image_assets/choong-soo.png"
+                alt="Profile image"
+              />
+            </span>
+
+            <!-- reslime text -->
+            <div class="pr-5 col-10">
+              <!-- title, @, date -->
+              <div>
+                <h6
+                  class="card-title"
+                  style=" padding-bottom: 5px"
+                >
+                <a href="../ProfilePages/Choong-SooProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Choong-Soo Lee</a><span class="card-subtitle text-muted">
+                    @ChoongSooL · September 3</span>
+                </h6>
+
+                <!-- slime text -->
+                Off campus (September 3, 2021 at 02:35PM)
+              </div>
+            </div>
+          </div>
+
+          <!-- buttons -->
+          <div class="row container-fluid">
+            <span class="col-md-10 offset-md-2">
+              <span
+                class="d-flex justify-content-between align-items-center"
+              >
+                <!-- comment button -->
+                <button type="button" class="btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-chat-right me-3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                    />
+                  </svg>
+                  <span>0</span>
+                </button>
+
+                <!-- reslime button -->
+                <button type="button" class="btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-recycle me-3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                    />
+                  </svg>
+                  <span>0</span>
+                </button>
+
+                <!-- heart button -->
+                <button type="button" class="btn">
+                  <!-- me-3 adds the space next to the icon-->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-heart me-3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                    />
+                  </svg>
+                    
+                  <!-- <i class="material-icons" style="color:red"></i> -->
+                  <span>0</span>
+                </button>
+
+                <!-- share button -->
+                <button type="button" class="btn position-relative">
+                  <svg
+                    style=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-upload"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                    />
+                  </svg>
+                </button>
+              </span>
+            </span>
+          </div>
+          <!-- share button -->
+        </div>
+        
+      
+      <!-- 3rd card -->
+      <div class="border rounded col-md-6 p-1 mb-4">
+        <!-- top line -->
+        
+
+        <!-- image -->
+        <div class="row container-fluid pt-3">
+          <span class="col-2">
+            <img
+              class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+              src="../image_assets/choong-soo.png"
+              alt="Profile image"
+            />
+          </span>
+
+          <!-- reslime text -->
+          <div class="pr-5 col-10">
+            <!-- title, @, date -->
+            <div>
+              <h6
+                class="card-title"
+                style="padding-bottom: 5px"
+              >
+              <a href="../ProfilePages/Choong-SooProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Choong-Soo Lee</a><span class="card-subtitle text-muted">
+                  @ChoongSooL · September 3</span>
+              </h6>
+
+              <!-- slime text -->
+              On campus (September 3, 2021 at 09:37AM)
+            </div>
+          </div>
+        </div>
+
+        <!-- buttons -->
+        <div class="row container-fluid">
+          <span class="col-md-10 offset-md-2">
+            <span
+              class="d-flex justify-content-between align-items-center"
+            >
+              <!-- comment button -->
+              <button type="button" class="btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-chat-right me-3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                  />
+                </svg>
+                <span>0</span>
+              </button>
+
+              <!-- reslime button -->
+              <button type="button" class="btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-recycle me-3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                  />
+                </svg>
+                <span>0</span>
+              </button>
+
+              <!-- heart button -->
+              <button type="button" class="btn">
+                <!-- me-3 adds the space next to the icon-->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-heart me-3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  />
+                </svg>
+                  
+                <!-- <i class="material-icons" style="color:red"></i> -->
+                <span>0</span>
+              </button>
+
+              <!-- share button -->
+              <button type="button" class="btn position-relative">
+                <svg
+                  style=""
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-upload"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                  />
+                  <path
+                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </span>
+        </div>
+        <!-- share button -->
+      </div>
+
+      <!--11th to last slime-->
+      <div class="border rounded col-md-6 p-1 mb-4">
+      
+
+      <!-- image -->
+      <div class="row container-fluid pt-3">
+        <span class="col-2">
+          <img
+            class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+            src="../image_assets/ed.png"
+            alt="Profile image"
+          />
+        </span>
+
+        <!-- reslime text -->
+        <div class="pr-5 col-10">
+          <!-- title, @, date -->
+          <div>
+            <h6
+              class="card-title"
+              style=" padding-bottom: 5px"
+            >
+            <a href="../ProfilePages/EdsProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Ed Harcourt</a><span class="card-subtitle text-muted">
+                @ed · September 3</span
+              >
+            </h6>
+
+            <!-- slime text -->
+            Sabbatical is super nice. Not a care in the world.
+            <a class="link"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="row container-fluid">
+        <span class="col-md-10 offset-md-2">
+          <span
+            class="d-flex justify-content-between align-items-center"
+          >
+            <!-- comment button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chat-right me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- reslime button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-recycle me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                />
+              </svg>
+              <span>1</span>
+            </button>
+
+            <!-- heart button -->
+            <button type="button" class="btn">
+              <!-- me-3 adds the space next to the icon-->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-heart-fill me-3 red"
+                viewBox="0 0 16 16"
+                style="fill: red"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                />
+              </svg>
+              <span style="color: red;">2</span>
+            </button>
+
+            <!-- share button -->
+            <button type="button" class="btn position-relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-upload"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                />
+                <path
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
+      </div>
+    </div>
+      <!--11th to last slime end-->
+
+      <!--10th to last slime-->
+      <div class="border rounded col-md-6 p-1 mb-4">
+      <div class="row container-fluid">
+        <h6
+          class="pl-5 pt-3"
+          style="padding-left: 10%"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-recycle"
+            viewBox="0 0 16 16"
+            style="margin-right: 20; margin-bottom: 4"
+          >
+            <path
+              d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+            />
+          </svg>
+          <b class="text-muted ">Ed Harcourt reslimed</b>
+        </h6>
+      </div>
+
+      <!-- image -->
+      <div class="row container-fluid">
+        <span class="col-2">
+          <img
+            class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+            src="../image_assets/kevin.jpeg"
+            alt="Profile image"
+          />
+        </span>
+
+        <!-- reslime text -->
+        <div class="pr-5 col-10">
+          <!-- title, @, date -->
+          <div>
+            <h6
+              class="card-title"
+              style=" padding-bottom: 5px"
+            >
+            <a href="../ProfilePages/KevinsProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Kevin Angstadt</a><span class="card-subtitle text-muted">
+                @KevinAAngstadt · August 30</span
+              >
+            </h6>
+
+            <!-- slime text -->
+            Hello world
+            <a class="link">#firstSlime</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="row container-fluid">
+        <span class="col-md-10 offset-md-2">
+          <span
+            class="d-flex justify-content-between align-items-center"
+          >
+            <!-- comment button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chat-right me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- reslime button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-recycle me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- heart button -->
+            <button type="button" class="btn">
+              <!-- me-3 adds the space next to the icon-->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-heart-fill me-3 red"
+                viewBox="0 0 16 16"
+                style="fill: red"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                />
+              </svg>
+              <span style="color: red;">1</span>
+            </button>
+            
+
+            <!-- share button -->
+            <button type="button" class="btn position-relative">
+              <svg
+                style=""
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-upload"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                />
+                <path
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
+      </div>
+      <!-- share button -->
+    </div>
+      <!--10th to last slime end-->
+
+      <!--9th to last slime-->
+      <div class="border rounded col-md-6 p-1 mb-4">
+      <div class="row container-fluid">
+        <h6
+          class="pl-5 pt-3 justify-content-between"
+          style="padding-left: 10%"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-recycle me-3"
+            viewBox="0 0 16 16"
+          >
+          <path
+            d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+          />
+          </svg>
+          <b class="text-muted">Lisa Torrey reslimed</b>
+        </h6>
+      </div>
+      
+      <!-- image -->
+      <div class="row container-fluid">
+        <span class="col-2">
+          <img
+            class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+            src="../image_assets/kevin.jpeg"
+            alt="Profile image"
+          />
+        </span>
+
+        <!-- reslime text -->
+        <div class="pr-5 col-10">
+          <!-- title, @, date -->
+          <div>
+            <h6
+              class="card-title"
+              style="width: 18rem; padding-bottom: 5px"
+            >
+            <a href="../ProfilePages/KevinsProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Kevin Angstadt</a><span class="card-subtitle text-muted">
+                @KevinAAngstadt · August 30</span
+              >
+            </h6>
+
+            <!-- slime text -->
+            Hello world <a class=link>#firstslime</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="row container-fluid">
+        <span class="col-md-10 offset-md-2">
+          <span
+            class="d-flex justify-content-between align-items-center"
+          >
+            <!-- comment button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chat-right me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                />
+              </svg>
+              <span>1</span>
+            </button>
+
+            <!-- reslime button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-recycle me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                />
+              </svg>
+              <span>3</span>
+            </button>
+
+            <!-- heart button -->
+            <button type="button" class="btn">
+              <!-- me-3 adds the space next to the icon-->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-heart-fill me-3 red"
+                viewBox="0 0 16 16"
+                style="fill: red"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                />
+              </svg>
+              <span style="color: red;">1</span>
+            </button>
+
+            <!-- share button -->
+            <button type="button" class="btn position-relative">
+              <svg
+                style=""
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-upload"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                />
+                <path
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
+        </div> 
+    </div>
+
+      <!--9th to last slime end-->
+
+      <!--Eighth to last slime-->
+      <div class="border rounded col-md-6 p-1 mb-4">
+
+      <!-- image -->
+      <div class="row container-fluid pt-3">
+        <span class="col-2">
+          <img
+            class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+            src="../image_assets/choong-soo.png"
+            alt="Profile image"
+          />
+        </span>
+
+        <!-- reslime text -->
+        <div class="pr-5 col-10">
+          <!-- title, @, date -->
+          <div>
+            <h6
+              class="card-title"
+              style=" padding-bottom: 5px"
+            >
+            <a href="../ProfilePages/Choong-SooProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Choong-Soo Lee</a><span class="card-subtitle text-muted">
+                @ChoongSooL · September 2</span>
+            </h6>
+
+            <!-- slime text -->
+            Off campus (September 2, 2021 at 04:35PM)
+          </div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="row container-fluid">
+        <span class="col-md-10 offset-md-2">
+          <span
+            class="d-flex justify-content-between align-items-center"
+          >
+            <!-- comment button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chat-right me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- reslime button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-recycle me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- heart button -->
+            <button type="button" class="btn">
+              <!-- me-3 adds the space next to the icon-->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-heart me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                />
+              </svg>
+                
+              <!-- <i class="material-icons" style="color:red"></i> -->
+              <span>0</span>
+            </button>
+
+            <!-- share button -->
+            <button type="button" class="btn position-relative">
+              <svg
+                style=""
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-upload"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                />
+                <path
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
+        </div>
+    </div>
+      <!--Eigth to last slime end-->
+
+      <!--Seventh to last slime-->
+      <div class="border rounded col-md-6 p-1 mb-4">
+
+      <!-- image -->
+      <div class="row container-fluid pt-3">
+        <span class="col-2">
+          <img
+            class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+            src="../image_assets/lisa.jpeg"
+            alt="Profile image"
+          />
+        </span>
+
+        <!-- reslime text -->
+        <div class="pr-5 col-10">
+          <!-- title, @, date -->
+          <div>
+            <h6
+              class="card-title"
+              style=" padding-bottom: 5px"
+            >
+            <a href="../ProfilePages/LisasProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Lisa Torrey</a><span class="card-subtitle text-muted">
+                @LTorrey · September 2</span
+              >
+            </h6>
+
+            <!-- slime text -->
+            It's kinda cool that we have our own in-house Twitter clone. 
+            <a class="link">#CSThoughts</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="row container-fluid">
+        <span class="col-md-10 offset-md-2">
+          <span
+            class="d-flex justify-content-between align-items-center"
+          >
+            <!-- comment button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chat-right me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- reslime button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-recycle me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- heart button -->
+            <button type="button" class="btn">
+              <!-- me-3 adds the space next to the icon-->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-heart-fill me-3 red"
+                viewBox="0 0 16 16"
+                style="fill: red"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                />
+              </svg>
+              <span style="color: red;">1</span>
+            </button>
+
+            <!-- share button -->
+            <button type="button" class="btn position-relative">
+              <svg
+                style=""
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-upload"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                />
+                <path
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
+      </div>
+    </div>
+      <!--Seventh to last slime end-->
+
+      <!--sixth to last slime-->
+      <div class="border rounded col-md-6 p-1 mb-4">
+
+        <!-- image -->
+        <div class="row container-fluid pt-3">
+      <span class="col-2">
+        <img
+          class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+          src="../image_assets/choong-soo.png"
+          alt="Profile image"
+        />
+      </span>
+
+      <!-- reslime text -->
+      <div class="pr-5 col-10">
+        <!-- title, @, date -->
+        <div>
+          <h6
+            class="card-title"
+            style="width: 18rem; padding-bottom: 5px"
+          >
+          <a href="../ProfilePages/Choong-SooProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Choong-Soo Lee</a><span class="card-subtitle text-muted">
+              @ChoongSooL · September 2</span>
+          </h6>
+
+          <!-- slime text -->
+          On campus (September 2, 2021 at 09:53AM)
+        </div>
+      </div>
+    </div>
+
+    <!-- buttons -->
+    <div class="row container-fluid">
+      <span class="col-md-10 offset-md-2">
+        <span
+          class="d-flex justify-content-between align-items-center"
+        >
+          <!-- comment button -->
+          <button type="button" class="btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chat-right me-3"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+              />
+            </svg>
+            <span>0</span>
+          </button>
+
+          <!-- reslime button -->
+          <button type="button" class="btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-recycle me-3"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+              />
+            </svg>
+            <span>0</span>
+          </button>
+
+          <!-- heart button -->
+          <button type="button" class="btn">
+            <!-- me-3 adds the space next to the icon-->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-heart me-3"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+              />
+            </svg>
+              
+            <!-- <i class="material-icons" style="color:red"></i> -->
+            <span>0</span>
+          </button>
+
+          <!-- share button -->
+          <button type="button" class="btn position-relative">
+            <svg
+              style=""
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-upload"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+              />
+              <path
+                d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+              />
+            </svg>
+          </button>
+        </span>
+      </span>
+    </div>
+      </div>
+      <!--Sixth to last slime end-->
+
+      <!--Fifth to last slime-->
+      <div class="border rounded col-md-6 p-1 mb-4">
+
+      <!-- image -->
+      <div class="row container-fluid pt-3">
+        <span class="col-2">
+          <img
+            class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+            src="../image_assets/choong-soo.png"
+            alt="Profile image"
+          />
+        </span>
+
+        <!-- reslime text -->
+        <div class="pr-5 col-10">
+          <!-- title, @, date -->
+          <div>
+            <h6
+              class="card-title"
+              style="width: 18rem; padding-bottom: 5px"
+            >
+              <a href="../ProfilePages/Choong-SooProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Choong-Soo Lee</a><span class="card-subtitle text-muted">
+                @ChoongSooL · September 1</span>
+            </h6>
+
+            <!-- slime text -->
+            Off campus (September 1, 2021 at 04:23PM)
+          </div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="row container-fluid">
+        <span class="col-md-10 offset-md-2">
+          <span
+            class="d-flex justify-content-between align-items-center"
+          >
+            <!-- comment button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chat-right me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- reslime button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-recycle me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- heart button -->
+            <button type="button" class="btn">
+              <!-- me-3 adds the space next to the icon-->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-heart me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                />
+              </svg>
+                
+              <!-- <i class="material-icons" style="color:red"></i> -->
+              <span>0</span>
+            </button>
+
+            <!-- share button -->
+            <button type="button" class="btn position-relative">
+              <svg
+                style=""
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-upload"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                />
+                <path
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
+      </div>
+      </div>
+      <!--Fifth to last slime end-->
+      
+      <!--Fourth to last slime-->
+      <div class="border rounded col-md-6 p-1 mb-4">
+      <div class="row container-fluid">
+        <h6
+          class="pl-5 pt-3 justify-content-between"
+          style="padding-left: 10%"
+        >
+        <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="16" 
+        height="16" 
+        fill="currentColor" 
+        class="bi bi-chat-right-fill me-3" 
+        viewBox="0 0 16 16"
+        style="fill: grey"
+        >
+        <path d="M14 0a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
+      </svg>
+          <b class="text-muted"
+            >Kevin Angstadt replied to Ed Harcourt</b
+          >
+        </h6>
+      </div>
+
+      <!-- image -->
+      <div class="row container-fluid">
+        <span class="col-2">
+          <img
+            class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+            src="../image_assets/kevin.jpeg"
+            alt="Profile image"
+          />
+        </span>
+
+        <!-- reslime text -->
+        <div class="pr-5 col-10">
+          <!-- title, @, date -->
+          <div>
+            <h6
+              class="card-title"
+              style="padding-bottom: 5px"
+            >
+            <a href="../ProfilePages/KevinsProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Kevin Angstadt </a><span class="card-subtitle text-muted">
+                @KevinAAngstadt · September 1</span
+              >
+            </h6>
+
+            <!-- slime text -->
+            <a class="link" href="../ProfilePages/EdsProfile.html">@ed</a>
+            SlugFest is way better than any other bird-based platforms. That's for sure!
+          </div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="row container-fluid">
+        <span class="col-md-10 offset-md-2">
+          <span
+            class="d-flex justify-content-between align-items-center"
+          >
+            <!-- comment button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chat-right me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- reslime button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-recycle me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- heart button -->
+            <button type="button" class="btn">
+              <!-- me-3 adds the space next to the icon-->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-heart me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                />
+              </svg>
+              <!-- <i class="material-icons" style="color:red"></i> -->
+              <span>1</span>
+            </button>
+
+            <!-- share button -->
+            <button type="button" class="btn position-relative">
+              <svg
+                style=""
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-upload"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                />
+                <path
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
+        </div>  
+    </div>
+      <!--Fourth to last slime end-->
+
+      <!--Third to last slime-->
+     
+      <div class="border rounded col-md-6 p-1 mb-4">
+      
+      <!-- image -->
+      <div class="row container-fluid pt-3">
+        <span class="col-2">
+          <img
+            class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+            src="../image_assets/choong-soo.png"
+            alt="Profile image"
+          />
+        </span>
+
+        <!-- reslime text -->
+        <div class="pr-5 col-10">
+          <!-- title, @, date -->
+          <div>
+            <h6
+              class="card-title"
+              style=" padding-bottom: 5px"
+            >
+            <a href="../ProfilePages/Choong-SooProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Choong-Soo Lee</a><span class="card-subtitle text-muted">
+                @ChoongSooL · September 1</span>
+            </h6>
+
+            <!-- slime text -->
+            On campus (September 1, 2021 at 09:49AM)
+          </div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="row container-fluid">
+        <span class="col-md-10 offset-md-2">
+          <span
+            class="d-flex justify-content-between align-items-center"
+          >
+            <!-- comment button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chat-right me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- reslime button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-recycle me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- heart button -->
+            <button type="button" class="btn">
+              <!-- me-3 adds the space next to the icon-->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-heart me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                />
+              </svg>
+                
+              <!-- <i class="material-icons" style="color:red"></i> -->
+              <span>0</span>
+            </button>
+
+            <!-- share button -->
+            <button type="button" class="btn position-relative">
+              <svg
+                style=""
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-upload"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                />
+                <path
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
+        </div>
+      </div>
+      <!--Third to last slime end-->
+
+      <!--Second to last slime-->
+      <div class="border rounded col-md-6 p-1 mb-4">
+      <div class="row container-fluid">
+        <h6
+          class="pl-5 pt-3 justify-content-between"
+          style="padding-left: 10%"
+        >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="16" 
+          height="16" 
+          fill="currentColor" 
+          class="bi bi-chat-right-fill me-3" 
+          viewBox="0 0 16 16"
+          style="fill: grey"
+          >
+          <path d="M14 0a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
+        </svg>
+          <a href="../SlimeFeedPage/slime.html" class="text-muted">Ed Harcourt replied to Kevin Angstadt</a>
+        </h6>
+      </div>
+
+      <!-- image -->
+      <div class="row container-fluid">
+        <span class="col-2">
+          <img
+            class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+            src="../image_assets/ed.png"
+            alt="Profile image"
+          />
+        </span>
+
+        <!-- reslime text -->
+        <div class="pr-5 col-10">
+          <!-- title, @, date -->
+          <div>
+            <h6
+              class="card-title"
+              style=" padding-bottom: 5px"
+            >
+            <a href="../ProfilePages/EdsProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Ed Harcourt</a><span class="card-subtitle text-muted">
+                @ed · September 1</span>
+            </h6>
+
+            <!-- slime text -->
+            <a class="link" href="../ProfilePages/KevinsProfile.html">@KevinAAngstadt</a>
+            Why am I on here?
+          </div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="row container-fluid">
+        <span class="col-md-10 offset-md-2">
+          <span
+            class="d-flex justify-content-between align-items-center"
+          >
+            <!-- comment button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chat-right me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- reslime button -->
+            <button type="button" class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-recycle me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                />
+              </svg>
+              <span>0</span>
+            </button>
+
+            <!-- heart button -->
+            <button type="button" class="btn">
+              <!-- me-3 adds the space next to the icon-->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-heart me-3"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                
+                />
+              </svg>
+              <span class="mx-3">0</span>
+            </button>
+
+            <!-- share button -->
+            <button type="button" class="btn position-relative">
+              <svg
+                style=""
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-upload"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                />
+                <path
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                />
+              </svg>
+            </button>
+          </span>
+        </span>
+        </div>
+      </div> <!--Second to last slime-->
+
+      <!--Last slime-->
+      <div class="border rounded col-md-6 p-1 mb-4">
+        
+        <!-- image -->
+        <div class="row container-fluid pt-3">
+          <span class="col-2">
+            <img
+              class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+              src="../image_assets/kevin.jpeg"
+              alt="Profile image"
+            />
+          </span>
+
+          <!-- reslime text -->
+          <div class="pr-5 col-10">
+            <!-- title, @, date -->
+            <div>
+              <h6
+                class="card-title"
+                style="padding-bottom: 5px"
+              >
+              <a href="../ProfilePages/KevinsProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Kevin Angstadt</a><span class="card-subtitle text-muted">
+                  @KevinAAngstadt · August 30</span
+                >
+              </h6>
+
+              <!-- slime text -->
+              Hello world <a class=link>#firstslime</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- buttons -->
+        <div class="row container-fluid">
+          <span class="col-md-10 offset-md-2">
+            <span
+              class="d-flex justify-content-between align-items-center"
+            >
+              <!-- comment button -->
+              <button type="button" class="btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-chat-right me-3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"
+                  />
+                </svg>
+                <span>1</span>
+              </button>
+
+              <!-- reslime button -->
+              <button type="button" class="btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-recycle me-3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+                  />
+                </svg>
+                <span>3</span>
+              </button>
+
+              <!-- heart button -->
+              <button type="button" class="btn">
+                <!-- me-3 adds the space next to the icon-->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-heart-fill me-3 red"
+                  viewBox="0 0 16 16"
+                  style="fill: red"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                  />
+                </svg>
+                <span style="color: red;">1</span>
+              </button>
+
+              <!-- share button -->
+              <button type="button" class="btn position-relative">
+                <svg
+                  style=""
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-upload"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                  />
+                  <path
+                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"
+                  />
+                </svg>
+              </button>
+            </span>
+          </span>
+        </div><!-- last slime end-->
+        
+
+      </div>
+
+
+    </div>
+  </body>
+</html>

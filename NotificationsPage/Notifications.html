@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notifications</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="Notifications.css" />
+    <style>
+      :root {
+        --bs-primary: #2872fa;
+        --bs-primary-rgb: 40, 114, 250;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sticky-top">
+      <!-- NAVBAR -->
+      <nav class="navbar sticky-top navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <!-- the company name or logo/link to home -->
+          <a class="navbar-brand text-light fw-medium" href="#">SlugFest</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- collapsable bar -->
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- Home Button -->
+              <li class="nav-item">
+                <a
+                  href="../FeedPage/FeedPage.html"
+                  class="btn btn-primary nav-link text-light opacity-75"
+                  >Home</a
+                >
+              </li>
+
+              <!-- Compose Button -->
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="btn btn-primary nav-link text-light opacity-75"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                  >Compose</a
+                >
+              </li>
+
+              <!-- Profile Button -->
+              <li class="nav-item">
+                <a
+                  href="../ProfilePages/KevinsProfile.html"
+                  class="btn btn-primary nav-link text-light opacity-75"
+                  >Profile</a
+                >
+              </li>
+
+              <!-- Notifications Button -->
+              <li class="nav-item">
+                <a
+                  href="../NotificationsPage/Notifications.html"
+                  class="btn btn-primary nav-link text-light"
+                  >Notifications</a
+                >
+              </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                  <!-- search icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-search"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                >
+              </div>
+              <button
+                class="btn btn-outline-success text-dark border border-0"
+                style="background-color: #54baed"
+                type="submit"
+                title="submit button"
+              >
+                <!-- submit button icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-chevron-bar-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.146 3.646a.5.5 0 0 0 0 .708L7.793 8l-3.647 3.646a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708 0zM11.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z"
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Modal -->
+    <!--Team Note: please add to indivial profile pages & nav bar -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Compose</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- text area -->
+          <div class="modal-body">
+            <div class="input-group">
+              <textarea
+                class="form-control"
+                placeholder="Compose Slime"
+                aria-label="With textarea"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">
+              Slime
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-right-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIMES -->
+    <div class="main-body">
+      <!-- PAGE TITLE -->
+
+      <div>
+        <h1>Notifications</h1>
+      </div>
+
+      <!-- First Card -->
+      <div class="container rounded border-1 col-md-8 p-2 mb-4">
+        <!-- top line -->
+        <div class="row container-fluid">
+          <span
+            class="col-2 d-flex justify-content-center align-items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="currentColor"
+              class="bi bi-recycle"
+              viewBox="0 0 16 16"
+              style="fill: green"
+            >
+              <path
+                d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+              />
+            </svg>
+          </span>
+
+          <!-- reslime text -->
+          <div class="pr-5 col-10">
+            <!-- title, @, date -->
+            <div class="row">
+              <span class="col-2">
+                <img
+                  class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+                  src="../image_assets/lisa.jpeg"
+                  alt="Profile image"
+                />
+              </span>
+              <!-- slime text -->
+            </div>
+          </div>
+
+          <!-- buttons -->
+          <div class="row container-fluid">
+            <div class="col-10 offset-2">
+              <div>
+                <b><a href="../ProfilePages/LisasProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Lisa Torrey</a></b> reslimed you <br />
+                <span class="notif-text">Hello world <a href="#" class="link">#Firstslime</a></span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="col-8" />
+
+      <!-- Second Card -->
+      <div class="container  rounded border-1 col-md-8 p-2 mb-4">
+        <!-- top line -->
+        <div class="row container-fluid">
+          <span
+            class="col-2 d-flex justify-content-center align-items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="currentColor"
+              class="bi bi-recycle"
+              viewBox="0 0 16 16"
+              style="fill: green"
+            >
+              <path
+                d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"
+              />
+            </svg>
+          </span>
+
+          <!-- reslime text -->
+          <div class="pr-5 col-10">
+            <!-- title, @, date -->
+            <div class="row">
+              <span class="col-2">
+                <img
+                  class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+                  src="../image_assets/ed.png"
+                  alt="Profile image"
+                />
+              </span>
+              <!-- slime text -->
+            </div>
+          </div>
+
+          <!-- buttons -->
+          <div class="row container-fluid">
+            <div class="col-md-10 offset-2">
+              <div>
+                <b><a href="../ProfilePages/EdsProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Ed Harcourt</a></b> reslimed you <br />
+                <span class="notif-text">Hello world <a href="#" class="link">#Firstslime</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="col-8" />
+
+      <!-- 3rd card -->
+      <div class="container rounded border-1 col-md-8 p-2 mb-4">
+        <!-- top line -->
+        <div class="row container-fluid">
+          <span
+            class="col-2 d-flex justify-content-center align-items-center"
+          >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="40" 
+            height="40" 
+            fill="currentColor" 
+            class="bi bi-heart-fill" 
+            viewBox="0 0 16 16" 
+            style="fill:red">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+          </svg>          
+        </span>
+
+          <!-- reslime text -->
+          <div class="pr-5 col-10">
+            <!-- title, @, date -->
+            <div class="row">
+              <span class="col-2">
+                <img
+                  class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+                  src="../image_assets/ed.png"
+                  alt="Profile image"
+                />
+              </span>
+              <!-- slime text -->
+            </div>
+          </div>
+
+          <!-- buttons -->
+          <div class="row container-fluid">
+            <div class="col-md-10 offset-2">
+              <div>
+                <b><a href="../ProfilePages/EdsProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Ed Harcourt</a></b> favorited your slime <br />
+                <span class="notif-text"><a href="../ProfilePages/EdsProfile.html" class="link">@ed</a> SlugFest is way better than any other bird-based platform out there. That's for sure. </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="col-8" />
+
+      <!-- 4th card -->
+      <div class="container  rounded border-1 col-md-8 p-2 mb-4">
+        <!-- top line -->
+        <div class="row container-fluid">
+          <span
+            class="col-2 d-flex justify-content-center align-items-center"
+          >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="40" 
+            height="40" 
+            fill="currentColor" 
+            class="bi bi-chat-right-fill" 
+            viewBox="0 0 16 16" 
+            style="fill:lightblue"
+            >
+            <path d="M14 0a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
+          </svg>
+          </span>
+
+          <!-- reslime text -->
+          <div class="pr-5 col-10">
+            <!-- title, @, date -->
+            <div class="row">
+              <span class="col-2">
+                <img
+                  class="p-2 img-thumbnail thumbnail-padding: 0.25 rem;"
+                  src="../image_assets/ed.png"
+                  alt="Profile image"
+                />
+              </span>
+              <!-- slime text -->
+            </div>
+          </div>
+
+          <!-- buttons -->
+          <div class="row container-fluid">
+            <div class="col-md-10 offset-2">
+              <div>
+                <b><a href="../ProfilePages/EdsProfile.html" class="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Ed Harcourt</a></b> replied to you <br />
+                <span class="notif-text"><a href="../ProfilePages/KevinsProfile.html" class="link">@KevinAAngstadt</a> Why am I on here </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="col-8" />
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+.main-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-direction: column;
+  }
+
+  
+.notif-text{
+    color: rgb(113, 111, 111);
+}
